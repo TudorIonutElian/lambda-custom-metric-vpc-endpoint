@@ -5,7 +5,7 @@
   - name: The name of the IAM role.
   - assume_role_policy: The ARN of the IAM policy document that allows the Lambda function to assume the role.
 */
-resource "aws_iam_role" "lambda_timely_invoked_iam_role" {
-  name               = "lambda-timely-invoked-role"
+resource "aws_iam_role" "lambda_push_metrics_vpc_endpoint_func_role" {
+  name               = "lambda-push-metrics-vpc-endpoint-func-role"
   assume_role_policy = data.aws_iam_policy_document.LambdaAWSLambdaTrustPolicy.json
 }
