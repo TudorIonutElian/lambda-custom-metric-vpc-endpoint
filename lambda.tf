@@ -15,4 +15,5 @@ resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
   role          = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.arn
   handler       = "index.handler"
   runtime       = "nodejs20.x"
+  source_code_hash = filebase64sha256("lambda_push_metrics_vpc_endpoint_func.zip")
 }
