@@ -8,6 +8,9 @@
   - handler: The name of the handler function in the Lambda code.
   - runtime: The runtime environment for the Lambda function.
   - source_code_hash: The base64-encoded SHA-256 hash of the .zip file containing the Lambda function code.
+  - vpc_config: The VPC configuration for the Lambda function.
+    - security_group_ids: The security group IDs for the Lambda function.
+    - subnet_ids: The subnet IDs for the Lambda function.
 */
 resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
   filename      = "lambda_push_metrics_vpc_endpoint_func.zip"
