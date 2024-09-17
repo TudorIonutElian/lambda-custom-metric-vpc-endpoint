@@ -3,7 +3,7 @@
     - This rule will allow outbound traffic on port 443 to the VPC endpoint security group 
 */
 resource "aws_security_group_rule" "demo_lambda_sg_outbound_rule" {
-  type                     = "outbound"
+  type                     = "egress"
   from_port                = 443
   to_port                  = 443
   protocol                 = "tcp"
