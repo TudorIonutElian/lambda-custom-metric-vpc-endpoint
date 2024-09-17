@@ -7,7 +7,6 @@ resource "aws_security_group" "demo_lambda_sg" {
   vpc_id = aws_vpc.demo_private_vpc.id 
 }
 
-
 /* 
     - Create a security group for the VPC endpoint. 
     - This security group will be associated with the VPC endpoint
