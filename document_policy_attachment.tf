@@ -19,3 +19,25 @@ data "aws_iam_policy_document" "LambdaAWSLambdaTrustPolicy" {
     }
   }
 }
+
+/**
+  * Create an IAM role for the Lambda function.
+  * The role will have the permissions to assume the role and execute the function.
+  * The role will be associated with the policy document that allows the Lambda function to assume the role.
+  */
+resource "aws_iam_policy" "demo_lambda_put_metric_policy" {
+  name        = "LambdaPutMetricPolicy"
+  description = "Policy to allow Lambda to put custom metrics to CloudWatch"
+  policy      = <<EOF
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": "cloudwatch:PutMetricData",
+          "Resource": "*"
+        }
+      ]
+    }
+  EOF
+}

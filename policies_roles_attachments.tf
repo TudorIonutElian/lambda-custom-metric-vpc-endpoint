@@ -9,3 +9,9 @@ resource "aws_iam_role_policy_attachment" "terraform_lambda_policy" {
   role       = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
+
+
+resource "aws_iam_role_policy_attachment" "lambda_put_metric_policy_attachment" {
+  role       = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.name
+  policy_arn = aws_iam_policy.demo_lambda_put_metric_policy.arn
+}
