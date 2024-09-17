@@ -15,4 +15,19 @@ resource "aws_vpc_endpoint" "demo_monitoring_vpc_endpoint" {
     aws_subnet.demo_private_subnet.id
   ]
   private_dns_enabled = true
+
+    policy = <<EOF
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": "cloudwatch:PutMetricData",
+                    "Resource": "*"
+                }
+            ]
+        }
+    EOF
+    
 }
