@@ -4,7 +4,7 @@
     - Will allow outbound traffic on port 443 to the VPC endpoint security group 
 */
 resource "aws_security_group" "demo_lambda_sg" {
-  vpc_id = aws_vpc.demo_private_vpc.id 
+  vpc_id = aws_vpc.demo_private_vpc.id
 }
 
 /* 
@@ -13,5 +13,5 @@ resource "aws_security_group" "demo_lambda_sg" {
     - Will allow inbound traffic on port 443 from the Lambda function security group 
 */
 resource "aws_security_group" "demo_monitoring_vpc_endpoint_sg" {
-  vpc_id = aws_vpc.demo_private_vpc.id 
+  vpc_id = aws_vpc.demo_private_vpc.id
 }

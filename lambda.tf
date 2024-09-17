@@ -10,9 +10,9 @@
   - source_code_hash: The base64-encoded SHA-256 hash of the .zip file containing the Lambda function code.
 */
 resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
-  filename         = "lambda_push_metrics_vpc_endpoint_func.zip"
-  function_name    = "lambda-push-metrics-vpc-endpoint-func"
-  role             = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.arn
-  handler          = "index.handler"
-  runtime          = "nodejs20.x"
+  filename      = "lambda_push_metrics_vpc_endpoint_func.zip"
+  function_name = "lambda-push-metrics-vpc-endpoint-func"
+  role          = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.arn
+  handler       = "index.handler"
+  runtime       = "nodejs20.x"
 }
