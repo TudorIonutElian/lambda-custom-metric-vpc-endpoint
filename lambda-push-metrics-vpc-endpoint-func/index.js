@@ -1,5 +1,5 @@
 // Use 'import' instead of 'require'
-import { CloudWatchClient, PutMetricDataCommand } from '@aws-sdk/client-cloudwatch';
+const { CloudWatchClient, PutMetricDataCommand } = require('@aws-sdk/client-cloudwatch');
 
 const cloudwatch = new CloudWatchClient();
 
