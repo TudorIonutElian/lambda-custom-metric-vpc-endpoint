@@ -16,4 +16,9 @@ resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
   handler       = "index.handler"
   runtime       = "nodejs20.x"
   source_code_hash = filebase64sha256("lambda_push_metrics_vpc_endpoint_func.zip")
+
+  vpc_config {
+    security_group_ids = [aws_security_group.demo_lambda_sg.id]
+    subnet_ids         = [aws_subnet.demo_subnet.id]
+  }
 }
