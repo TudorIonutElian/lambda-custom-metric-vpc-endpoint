@@ -6,6 +6,6 @@
   - policy_arn: The ARN of the IAM policy to attach to the role.
 */
 resource "aws_iam_role_policy_attachment" "terraform_lambda_policy" {
-  role       = aws_iam_role.lambda_timely_invoked_iam_role.name
+  role       = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
