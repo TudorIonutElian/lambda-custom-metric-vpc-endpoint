@@ -19,6 +19,6 @@ resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
 
   vpc_config {
     security_group_ids = [aws_security_group.demo_lambda_sg.id]
-    subnet_ids         = [aws_subnet.demo_subnet.id]
+    subnet_ids         = [aws_subnet.demo_private_subnet.id]
   }
 }
