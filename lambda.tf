@@ -25,3 +25,4 @@ resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
     subnet_ids         = [aws_subnet.demo_private_subnet.id]
   }
 }
+
