@@ -8,4 +8,8 @@
 resource "aws_iam_role" "lambda_push_metrics_vpc_endpoint_func_role" {
   name               = "lambda-push-metrics-vpc-endpoint-func-role"
   assume_role_policy = data.aws_iam_policy_document.LambdaAWSLambdaTrustPolicy.json
+
+  tags = {
+    Project = "irs_demo_vpc_endpoint"
+  }
 }

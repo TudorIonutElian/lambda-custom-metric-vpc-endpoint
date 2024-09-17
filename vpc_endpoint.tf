@@ -16,7 +16,7 @@ resource "aws_vpc_endpoint" "demo_monitoring_vpc_endpoint" {
   ]
   private_dns_enabled = true
 
-    policy = <<EOF
+  policy = <<EOF
         {
             "Version": "2012-10-17",
             "Statement": [
@@ -29,5 +29,9 @@ resource "aws_vpc_endpoint" "demo_monitoring_vpc_endpoint" {
             ]
         }
     EOF
-    
+
+  tags = {
+    Project = "irs_demo_vpc_endpoint"
+  }
+
 }
