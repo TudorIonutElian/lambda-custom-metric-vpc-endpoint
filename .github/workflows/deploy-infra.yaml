@@ -24,7 +24,7 @@ jobs:
             if [ ! -d "lambda-custom-metric-vpc-endpoint" ]; then
                 git clone https://github.com/${{ env.REPO_NAME }}.git
             fi
-            cd lambda-timely-invoked
+            cd lambda-custom-metric-vpc-endpoint
             git pull
             terraform init
             terraform plan -out=plan-${{ github.run_number }}.out
