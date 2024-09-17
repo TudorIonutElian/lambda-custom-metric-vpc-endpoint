@@ -56,7 +56,10 @@ resource "aws_iam_policy" "demo_lambda_create_network_interface_policy" {
       "Statement": [
         {
           "Effect": "Allow",
-          "Action": "ec2:CreateNetworkInterface",
+          "Action": [
+            "ec2:CreateNetworkInterface", 
+            "DescribeNetworkInterfaces"
+          ],
           "Resource": "*"
         }
       ]
