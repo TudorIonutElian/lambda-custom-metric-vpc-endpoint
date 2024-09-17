@@ -41,3 +41,25 @@ resource "aws_iam_policy" "demo_lambda_put_metric_policy" {
     }
   EOF
 }
+
+/**
+  * Create an awas_iam_policy that allows the Lambda function to create network interfaces.
+   - The policy allows the Lambda function to create network interfaces.
+  - The policy allows the Lambda function to create network interfaces on any resource.
+*/
+resource "aws_iam_policy" "demo_lambda_create_network_interface_policy" {
+  name        = "LambdaCreateNetworkInterfacePolicy"
+  description = "Policy to allow Lambda to create network interfaces"
+  policy      = <<EOF
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": "ec2:CreateNetworkInterface",
+          "Resource": "*"
+        }
+      ]
+    }
+  EOF
+}
