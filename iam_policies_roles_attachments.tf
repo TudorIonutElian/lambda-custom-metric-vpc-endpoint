@@ -35,3 +35,12 @@ resource "aws_iam_role_policy_attachment" "lambda_create_network_interface_polic
   role       = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.name
   policy_arn = aws_iam_policy.demo_lambda_create_network_interface_policy.arn
 }
+
+/**
+  - aws_iam_policy_document is a data source that generates an IAM policy document 
+  - that can be referenced by other resources.
+*/
+resource "aws_iam_role_policy_attachment" "demo_lambda_put_metric_policy_attachment" {
+  role       = aws_iam_role.lambda_push_metrics_vpc_endpoint_func_role.name
+  policy_arn = aws_iam_policy.demo_lambda_put_metric_policy.arn
+}
