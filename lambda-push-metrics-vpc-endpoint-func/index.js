@@ -1,9 +1,8 @@
 // Use 'import' instead of 'require'
 const { CloudWatchClient, PutMetricDataCommand } = require('@aws-sdk/client-cloudwatch');
-
 const cloudwatch = new CloudWatchClient();
 
-export const handler = async (event) => {
+module.exports.handler = async (event) => {
     const metricData = {
         MetricData: [
             {
