@@ -31,6 +31,7 @@ resource "aws_vpc_endpoint" "demo_monitoring_vpc_endpoint" {
     EOF
 
   tags = {
+    Name = "irs_demo_monitoring_vpc_endpoint"
     Project = "irs_demo_vpc_endpoint"
   }
 

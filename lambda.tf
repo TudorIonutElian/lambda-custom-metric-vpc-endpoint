@@ -26,6 +26,7 @@ resource "aws_lambda_function" "lambda_push_metrics_vpc_endpoint_func" {
   }
 
   tags = {
+    Name = "irs_lambda_push_metrics_vpc_endpoint_func"
     Project = "irs_demo_vpc_endpoint"
   }
 }
