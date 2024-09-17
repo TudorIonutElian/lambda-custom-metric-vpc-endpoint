@@ -38,7 +38,7 @@ data "aws_iam_policy_document" "demo_lambda_put_metric_policy_doc" {
 */
 data "aws_iam_policy_document" "demo_lambda_create_network_interface_policy_doc" {
   statement {
-    actions   = ["ec2:CreateNetworkInterface", "ec2:DescribeNetworkInterfaces", "DeleteNetworkInterface"]
+    actions   = ["ec2:CreateNetworkInterface", "ec2:DescribeNetworkInterfaces", "ec2:DeleteNetworkInterface"]
     resources = ["*"]
     effect    = "Allow"
   }
